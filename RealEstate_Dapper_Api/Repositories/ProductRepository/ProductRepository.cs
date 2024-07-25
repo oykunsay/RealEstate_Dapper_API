@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using RealEstate_Dapper_Api.Dtos.CategoryDtos;
 using RealEstate_Dapper_Api.Dtos.EmployeeDtos;
+using RealEstate_Dapper_Api.Dtos.ProductDetailDtos;
 using RealEstate_Dapper_Api.Dtos.ProductDtos;
 using RealEstate_Dapper_Api.Models.DapperContext;
 
@@ -116,6 +117,17 @@ namespace RealEstate_Dapper_Api.Repositories.ProductRepository
                 return values.FirstOrDefault();
             }
 
+        }
+        public async Task<GetProductDetailByIdDto> GetProductDetailByProductId(int id)
+        {
+            string query = "Select * From ProductDetails Where ProductId=@productId";
+            var parameters = new DynamicParameters();
+            parameters.Add("@productID", id);
+            using (var connection = _context.CreateConnection())
+            {
+                var values = await connection.QueryAsync<GetProductDetailByIdDto>(query, parameters);
+                return values.FirstOrDefault();
+            }
         }
         public async Task ProductDealOfTheDayStatusChangeToFalse(int id)
         {
