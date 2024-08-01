@@ -29,30 +29,39 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model)
+                            @if (Model != null && Model.Any())
                             {
-                                count++;
+                                @foreach (var item in Model)
+                                {
+                                    count++;
+                                    <tr>
+                                        <th scope="row">@count</th>
+                                        <td>@item.title</td>
+                                        <td>@item.city</td>
+                                        <td>@item.district</td>
+                                        <td>@item.categoryName</td>
+                                        <td>@item.price</td>
+                                        <td>@item.type</td>
+                                        <td><a href="/Product/DeleteProduct/@item.productID" class="btn btn-outline-danger">Sil</a></td>
+                                        <td><a href="/Product/UpdateProduct/@item.productID" class="btn btn-outline-success">Güncelle</a></td>
+                                        <td><a href="/Product/ProductDetail/@item.productID" class="btn btn-outline-primary">Sitede Gör</a></td>
+                                        <td>
+                                            @if (item.dealOfTheDay)
+                                            {
+                                                <a href="/Product/ProductDealOfTheDayStatusChangeToFalse/@item.productID" class="btn btn-outline-secondary">Pasif Yap</a>
+                                            }
+                                            else
+                                            {
+                                                <a href="/Product/ProductDealOfTheDayStatusChangeToTrue/@item.productID" class="btn btn-outline-warning">Aktif Yap</a>
+                                            }
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                            else
+                            {
                                 <tr>
-                                    <th scope="row">@count</th>
-                                    <td>@item.title</td>
-                                    <td>@item.city</td>
-                                    <td>@item.district</td>
-                                    <td>@item.categoryName</td>
-                                    <td>@item.price</td>
-                                    <td>@item.type</td>
-                                    <td><a href="/Product/DeleteProduct/@item.productID" class="btn btn-outline-danger">Sil</a></td>
-                                    <td><a href="/Product/UpdateProduct/@item.productID" class="btn btn-outline-success">Güncelle</a></td>
-                                    <td><a href="/Product/ProductDetail/@item.productID" class="btn btn-outline-primary">Sitede Gör</a></td>
-                                    <td>
-                                        @if (item.dealOfTheDay == true)
-                                        {
-                                            <a href="/Product/ProductDealOfTheDayStatusChangeToFalse/@item.productID" class="btn btn-outline-secondary">Pasif Yap</a>
-                                        }
-                                        @if (item.dealOfTheDay == false)
-                                        {
-                                            <a href="/Product/ProductDealOfTheDayStatusChangeToTrue/@item.productID" class="btn btn-outline-warning">Aktif Yap</a>
-                                        }
-                                    </td>
+                                    <td colspan="11" class="text-center">Herhangi bir ilan bulunamadı.</td>
                                 </tr>
                             }
                         </tbody>
