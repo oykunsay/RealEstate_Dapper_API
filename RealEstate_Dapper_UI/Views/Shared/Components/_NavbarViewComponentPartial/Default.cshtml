@@ -2,17 +2,11 @@
     <div class="container">
         <nav class="navbar navbar-expand-lg stroke px-0">
             <h1>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/Default/Index/">
                     <span class="fa fa-home"></span> Real Estate
                 </a>
             </h1>
-            <!-- if logo is image enable this
-            <a class="navbar-brand" href="#index.html">
-                <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-            </a> -->
-            <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
-                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
+            <button class="navbar-toggler collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
                 <span class="navbar-toggler-icon fa icon-close fa-times"></span>
             </button>
@@ -26,22 +20,21 @@
                         <a class="nav-link" href="listing.html">İlanlar</a>
                     </li>
                     <li class="nav-item dropdown @@property__active">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Fırsatlar <span class="fa fa-angle-down"></span>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item @@ps__active" href="property-single.html">Günün Fırsatı</a>
                         </div>
                     </li>
-                    <li class="nav-item @@listing__active">
-                        <a class="nav-link" href="listing.html">Hakkımızda</a>
+                    <li class="nav-item @@about__active">
+                        <a class="nav-link" href="about.html">Hakkımızda</a>
                     </li>
-                    <li class="nav-item @@listing__active">
-                        <a class="nav-link" href="listing.html">Bize Yazın</a>
+                    <li class="nav-item @@contact__active">
+                        <a class="nav-link" href="contact.html">Bize Yazın</a>
                     </li>
-                    <li class="nav-item @@listing__active">
-                        <a class="nav-link" href="listing.html">Giriş Yap</a>
+                    <li class="nav-item @@login__active">
+                        <a class="nav-link" href="/Login/Index/">Giriş Yap</a>
                     </li>
                 </ul>
                 <div class="top-quote mt-lg-0">
@@ -49,20 +42,18 @@
                         <span class="fa fa-home"></span> İlan Ver
                     </a>
                 </div>
-                <!--/search-right-->
                 <div class="search mx-3">
                     <input class="search_box" type="checkbox" id="search_box">
                     <label class="fa fa-search" for="search_box"></label>
                     <div class="search_form">
-                        <form action="error.html" method="GET">
-                            <input type="text" placeholder="Search"><input type="submit" value="search">
+                        <form action="search-results.html" method="GET">
+                            <input type="text" placeholder="Search" name="query">
+                            <input type="submit" value="search">
                         </form>
                     </div>
                 </div>
-                <!--//search-right-->
             </div>
 
-            <!-- toggle switch for light and dark theme -->
             <div class="mobile-position">
                 <nav class="navigation">
                     <div class="theme-switch-wrapper">
@@ -76,7 +67,6 @@
                     </div>
                 </nav>
             </div>
-            <!-- //toggle switch for light and dark theme -->
         </nav>
     </div>
 </header>

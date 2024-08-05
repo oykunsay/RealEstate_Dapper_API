@@ -1,10 +1,5 @@
 ﻿@model List<ResultCategoryDto>
 
-@{
-	ViewData["Title"] = "Index";
-	Layout = "~/Views/Shared/_DefaultLayout.cshtml";
-}
-
 <section class="w3l-cover-3">
 	<div class="cover top-bottom">
 		<div class="container">
@@ -21,9 +16,9 @@
 						</ul>
 					</div>
 					<form asp-action="PartialSearch" asp-controller="Default" class="w3l-cover-3-gd" method="post">
-						<input type="search" name="searchKeyValue" placeholder="Anahtar kelimeyi girin" required>
+						<input type="search" name="p" placeholder="Anahtar kelimeyi girin" required>
 						<span class="input-group-btn">
-							<select class="btn btn-default" name="propertyCategoryId" required>
+							<select class="btn btn-default" name="ext" required>
 								<option selected="">Gayrimenkul Türü</option>
 								@foreach (var item in Model)
 								{
@@ -32,17 +27,16 @@
 							</select>
 						</span>
 						<span class="input-group-btn">
-							<select class="btn btn-default" name="city" required>
+							<select class="btn btn-default" name="y" required>
 								<option selected="">Şehir Seçiniz</option>
-								<option>İstanbul</option>
-								<option>Paris</option>
-								<option>Milano</option>
-								<option>Roma</option>
-								<option>Lyon</option>
-								<option>Münih</option>
 								<option>Berlin</option>
+								<option>İstanbul</option>
+								<option>Lyon</option>
+								<option>Milano</option>
+								<option>Münih</option>
+								<option>Paris</option>
+								<option>Roma</option>
 								<option>Sofya</option>
-								<option>İzmir</option>
 							</select>
 						</span>
 						<button type="submit" class="btn-primary">Ara</button>
@@ -55,19 +49,3 @@
 		</div>
 	</div>
 </section>
-
-@await Component.InvokeAsync("_DefaultHomePageProductList")
-
-@await Component.InvokeAsync("_DefaultWhoWeAreComponentPartial")
-
-@await Component.InvokeAsync("_DefaultBottomGridComponentPartial")
-
-@await Component.InvokeAsync("_DefaultProductListExploreCitiesComponentPartial")
-
-@await Component.InvokeAsync("_DefaultOurTestimonialComponentPartial")
-
-@await Component.InvokeAsync("_DefaultSubFeatureComponentPartial")
-
-@await Component.InvokeAsync("_DefaultDiscountOfDayComponentPartial")
-
-@await Component.InvokeAsync("_DefaultBrandComponentPartial")

@@ -49,10 +49,7 @@
         <div class="row">
             <div class="col-lg-8 w3l-news">
                 <div class="blog-single-post">
-
-
                     @await Component.InvokeAsync("_PropertySliderComponentPartial", new { id = ViewBag.i })
-
 
                     <div class="single-post-content">
                         <h3 class="post-content-title mb-3">İlan Açıklaması</h3>
@@ -64,7 +61,7 @@
                             <h3 class="post-content-title mb-4">İlan Detayları</h3>
                             <ul class="details-list">
                                 <li><strong>İlan Id :</strong> @ViewBag.produtcId </li>
-                                <li><strong>Metrekate :</strong> @ViewBag.size </li>
+                                <li><strong>Metrekare :</strong> @ViewBag.size </li>
                                 <li><strong>Oda Sayısı :</strong> @ViewBag.roomCount </li>
                                 <li><strong>Yatak Odası :</strong> @ViewBag.bedCount </li>
                                 <li><strong>Banyo Sayısı :</strong> @ViewBag.bathCount </li>
@@ -79,30 +76,24 @@
                         </div>
 
                         @await Component.InvokeAsync("_PropertyAmenityStatusTrueByPropertyIdComponentPartial")
-
                     </div>
 
                     <div class="single-bg-white">
                         <h3 class="post-content-title mb-4">Lokasyon</h3>
                         <div class="agent-map">
-                            <iframe src="@ViewBag.location"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3012.567976464438!2d29.036065300000008!3d40.969042200000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9ae372bae69%3A0x1bb8ae5f561f9621!2zRmVuZXJiYWjDp2UgUGFya8Sx!5e0!3m2!1str!2str!4v1722676564866!5m2!1str!2str" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
-
-
 
                     <div class="single-bg-white mb-0">
                         <h3 class="post-content-title mb-4">Ev Tanıtım Videosu</h3>
                         <div class="post-content">
-                            <iframe src="@ViewBag.videoUrl" frameborder="0"
-                                    allowfullscreen=""></iframe>
+                            <iframe src="https://www.youtube.com/embed/VXOok5J_M3M" width="560" height="315" frameborder="0" allowfullscreen=""></iframe>
                         </div>
                     </div>
                 </div>
             </div>
             @await Component.InvokeAsync("_PropertyAppUserComponentPartial")
-
         </div>
     </div>
 </section>
-

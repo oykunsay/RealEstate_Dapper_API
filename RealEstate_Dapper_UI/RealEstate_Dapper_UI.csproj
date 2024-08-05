@@ -11,9 +11,4 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Areas\EstateAgent\Data\" />
-    <Folder Include="Areas\EstateAgent\Models\" />
-  </ItemGroup>
-
 </Project>
